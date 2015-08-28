@@ -1,0 +1,15 @@
+<h1>Bands</h1>
+
+<% if Band.all.any? %>
+  <ul>
+    <% Band.all.each do |band| %>
+      <li><%= band.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>
+    There are no bands add one
+  </p>
+<% end %>
+
+<a href="/bands/new">Add Band</a>
