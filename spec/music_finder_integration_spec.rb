@@ -22,4 +22,12 @@ describe 'music_finder path', { type: :feature } do
     click_button 'Submit'
     expect(page).to have_content 'Rage'
   end
+
+  it 'can delete a band' do
+    band = Band.create({ name: 'Nas' })
+    visit "/bands/#{band.id}"
+    click_link 'Update Band'
+    click_button 'Delete'
+    expect(page).not_to have_content 'Nas'
+  end
 end

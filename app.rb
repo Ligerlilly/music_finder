@@ -43,3 +43,9 @@ patch '/bands/:id' do
 	@band.update({ name: params['name'] })
 	redirect "/bands/#{@band.id}"
 end
+
+delete '/bands/:id' do
+	@band = Band.find(params['id'].to_i)
+	@band.destroy
+	redirect '/bands'
+end

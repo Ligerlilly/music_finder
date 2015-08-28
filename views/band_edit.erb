@@ -2,6 +2,13 @@
 
 <form action="/bands/<%= @band.id %>" method="post">
   <div class='form-group'>
+    <input type="hidden" name="_method" value="delete">
+  </div>
+  <button class='btn btn success'>Delete</button>
+</form>
+
+<form action="/bands/<%= @band.id %>" method="post">
+  <div class='form-group'>
     <input type="hidden" name="_method" value="patch">
     <label for="name">Enter Band Name:</label>
     <input type="text" name="name" class='form-control'>
