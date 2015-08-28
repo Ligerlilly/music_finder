@@ -30,4 +30,13 @@ describe 'music_finder path', { type: :feature } do
     click_button 'Delete'
     expect(page).not_to have_content 'Nas'
   end
+
+  it 'can create a venue' do
+    visit '/'
+    click_link 'Venues'
+    click_link "Add Venue"
+    fill_in 'name', with: 'PGE Park'
+    click_button 'Submit'
+    expect(page).to have_content 'PGE Park'
+  end
 end

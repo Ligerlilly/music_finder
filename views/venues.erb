@@ -1,0 +1,15 @@
+<h1>Venues</h1>
+
+<% if Venue.all.any? %>
+  <ul>
+    <% Venue.all.each do |venue| %>
+      <li><a href="/venues/<%= venue.id %>"><%= venue.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>
+    There are no venues add one
+  </p>
+<% end %>
+
+<a href="/venues/new">Add Venue</a>
