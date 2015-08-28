@@ -1,0 +1,13 @@
+<h1><%= @venue.name %></h1>
+
+<% if @venue.bands.any? %>
+  <h3>Is hosting at these bands</h3>
+  <ul>
+    <% @venue.bands.each do |band| %>
+      <li><a href="/bands/<%= band.id %>"><%= band.name %></a></li>
+    <% end %>
+  </ul>
+
+<% end %>
+
+<a href="/">back</a>

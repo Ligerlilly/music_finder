@@ -63,6 +63,11 @@ post '/venues' do
 	redirect '/venues'
 end
 
+get '/venues/:id' do
+	@venue = Venue.find(params['id'].to_i)
+	erb :venue
+end
+
 get '/bands/:id/venues/new' do
 	@band = Band.find(params['id'].to_i)
 	erb :band_venue_form

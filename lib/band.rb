@@ -8,14 +8,11 @@ class Band < ActiveRecord::Base
   private
 
   def cap_band
-
     name_pieces = self.name.split(' ')
-
     name_pieces.each do |piece|
       piece.capitalize!
     end
     name = name_pieces.join('')
-
     self.name = name
   end
 end
