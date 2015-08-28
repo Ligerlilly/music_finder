@@ -2,10 +2,17 @@
 ##	Contributors:
 * Jason
 * Lane
+
+## Description
+User can create bands and venues then add venues to a band
+
 ##	Setup
 
 * Download the Repo
 * `cd` into the Directory
+* in another terminal window run postgres
+* run rake db:create
+* run rake db:migrate
 * `ruby app.rb` to start the server
 * `rspec` to test
 
@@ -21,4 +28,3 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
