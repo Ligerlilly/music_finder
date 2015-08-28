@@ -27,3 +27,19 @@ post '/bands' do
 	@band = Band.create({ name: params['name'] })
 	redirect '/bands'
 end
+
+get '/bands/:id' do
+	@band = Band.find(params['id'].to_i)
+	erb :band
+end
+
+get '/bands/:id/edit' do
+	@band = Band.find(params['id'].to_i)
+  erb :band_edit
+end
+
+patch '/bands/:id' do
+	@band = Band.find(params['id'].to_i)
+	@band.update({ name: params['name'] })
+	redirect "/bands/#{@band.id}"
+end

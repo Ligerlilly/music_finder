@@ -3,7 +3,7 @@
 <% if Band.all.any? %>
   <ul>
     <% Band.all.each do |band| %>
-      <li><%= band.name %></li>
+      <li><a href="/bands/<%= band.id %>"><%= band.name %></a></li>
     <% end %>
   </ul>
 <% else %>
