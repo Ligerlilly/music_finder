@@ -1,15 +1,18 @@
 <h2>Add a venue to <%= @band.name %></h2>
-
-<form action="/bands/<%= @band.id %>/venues" method="post">
-  <div class='form-group'>
-    <label for="venue_id">Select a Venue:</label>
-    <select name="venue_id">
-      <% Venue.all.each do |venue| %>
-        <option value='<%= venue.id %>'><%= venue.name %></option>
-      <% end %>
-    </select>
-  </div>
-  <button class='btn btn-success' type='submit'>Submit</button>
-</form>
+<% if Venue.all.any? %>
+  <form action="/bands/<%= @band.id %>/venues" method="post">
+    <div class='form-group'>
+      <label for="venue_id">Select a Venue:</label>
+      <select name="venue_id">
+        <% Venue.all.each do |venue| %>
+          <option value='<%= venue.id %>'><%= venue.name %></option>
+        <% end %>
+      </select>
+    </div>
+    <button class='btn btn-success' type='submit'>Submit</button>
+  </form>
+<% else %>
+   <p>There are no venues <a href="/venues/new">Add Venue</a></p>
+<% end %>
 
 <a href="/">back</a>
