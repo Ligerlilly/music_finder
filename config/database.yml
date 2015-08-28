@@ -1,0 +1,6 @@
+development:
+  adapter: postgresql
+  database: music_finder_development
+test:
+  adapter: postgresql
+  database: music_finder_test
