@@ -7,4 +7,11 @@ describe Band do
       expect(Band.all.any?).to eq false
     end
   end
+
+  describe '#cap_band' do
+    it 'capitalizes band name' do
+      band = Band.create({ name: 'rage' })
+      expect(band.name).to eq 'Rage'
+    end
+  end
 end
