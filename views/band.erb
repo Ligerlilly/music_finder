@@ -1,3 +1,15 @@
 <h1><%= @band.name %></h1>
 
+<% if @band.venues.any? %>
+  <h3><%= @band.name %> is play at these venues</h3>
+  <ul>
+    <% @band.venues.each do |venue| %>
+      <li><%= venue.name %></li>  
+    <% end %>
+  </ul>
+
+<% end %>
+
 <a href="/bands/<%= @band.id %>/edit">Update Band</a>
+
+<a href="/bands/<%= @band.id %>/venues/new">Add a Venue to a Band</a>

@@ -39,4 +39,15 @@ describe 'music_finder path', { type: :feature } do
     click_button 'Submit'
     expect(page).to have_content 'PGE Park'
   end
+
+  it 'can add a venue to a band' do
+    band = Band.create({ name: 'Nas' })
+    venue = Venue.create({ name: 'PGE Park' })
+    visit "/bands/#{band.id}"
+    click_link 'Add a Venue to a Band'
+    select 'PGE Park', from: 'venue_id'
+    click_button 'Submit'
+    expect(page).to have_content 'Nas'
+    expect(page).to have_content 'PGE Park'
+  end
 end
