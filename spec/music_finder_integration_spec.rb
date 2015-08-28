@@ -4,7 +4,7 @@ set(:show_exceptions, false)
 
 
 describe 'music_finder path', { type: :feature } do
-  it 'can create a band' do
+  it 'can create a band only if name field is filled in' do
     visit '/'
     click_link 'Bands'
     click_link "Add Band"
@@ -35,19 +35,19 @@ describe 'music_finder path', { type: :feature } do
     visit '/'
     click_link 'Venues'
     click_link "Add Venue"
-    fill_in 'name', with: 'PGE Park'
+    fill_in 'name', with: 'Moda Center'
     click_button 'Submit'
-    expect(page).to have_content 'PGE Park'
+    expect(page).to have_content 'Moda Center'
   end
 
   it 'can add a venue to a band' do
     band = Band.create({ name: 'Nas' })
-    venue = Venue.create({ name: 'PGE Park' })
+    venue = Venue.create({ name: 'Moda Center' })
     visit "/bands/#{band.id}"
     click_link 'Add a Venue to a Band'
-    select 'PGE Park', from: 'venue_id'
+    select 'Moda Center', from: 'venue_id'
     click_button 'Submit'
     expect(page).to have_content 'Nas'
-    expect(page).to have_content 'PGE Park'
+    expect(page).to have_content 'Moda Center'
   end
 end
