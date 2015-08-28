@@ -17,7 +17,7 @@ User can create bands and venues then add venues to a band
 * `rspec` to test
 
 ###	Technologies Used
- (Add information here)
+ rspec pry postgres sinatra active-record capybara
 ###	Legal
 Copyright (c) 2015 **_Jason Lane_**
 
